@@ -1,12 +1,19 @@
 @import "_variables.less";
+@import "_vendor.less";
 @import "_normalize.less";
 
 html,
 body {
-	font-family: "jaf-bernino-sans";
+	font-family: "jaf-bernino-sans", "AvenirNext-Medium", Verdana, Segoe, sans-serif;
 	background: @color-background;
 	color: @color-text;
 	margin: 0;
+	-moz-font-feature-settings: "onum=1,pnum=1,kern=false,liga=1";
+	-webkit-font-feature-settings: "onum" 1,"pnum" 1,"kern" false, "liga" 1;
+	-moz-font-feature-settings: "onum" 1, "pnum" 1, "kern" false, "liga" 1;
+	-o-font-feature-settings: "onum" 1, "pnum" 1, "kern" false, "liga" 1;
+	font-feature-settings: "onum" 1, "pnum" 1, "kern" false, "liga" 1;
+	font-variant:normal
 }
 
 a, a:visited {
@@ -21,19 +28,22 @@ a, a:visited {
 }
 
 .container {
-	font-size: 1.25rem;
-	line-height: 1.4;
-	margin: 1.4em auto 4em auto;
-	padding: 0 1.6em;
-	transition: max-width 0.5s;
+	font-size: 0.8rem;
 	max-width: 28em;
+	@media screen and (min-width: @screen-small) {
+		font-size: 1.25rem;
+		line-height: 1.4;
+		margin: 1.4em auto 4em auto;
+		padding: 0 1.6em;
+		transition: max-width 0.5s;
+	}
 	@media screen and (min-width: @screen-medium) {
 		max-width: 36em;
 	}
 }
 
 header, h1, h2, h3, h4, h5 {
-	font-family: "jaf-bernina-sans-condensed";
+	font-family: "jaf-bernina-sans-condensed", "AvenirNextCondensed-Bold", "Futura-CondensedExtraBold", Futura, "Century Gothic", CenturyGothic, AppleGothic, Verdana, sans-serif
 }
 
 h1 {
@@ -41,17 +51,21 @@ h1 {
 		top: 0;
 		color: @color-header;
 		position: absolute;
-		text-shadow: 0 0 0.3em rgba(0, 0, 0, 0.25);
-		font-size: 4rem;
+		text-shadow: 0 0 0.33em rgba(0, 0, 0, 0.5);
+		font-size: 2rem;
 		display: block;
 		line-height: 0.95;
 		text-transform: uppercase;
 		margin-right: 2rem;
+		@media screen and (min-width: @screen-small) {
+			font-size: 3.5rem;
+		}
 		@media screen and (min-width: 29em) {
 			font-size: 4.75rem;
+			border: none;
 		}
 		@media screen and (min-width: 35em) {
-			font-size: 6rem;
+			font-size: 5.5rem;
 			top: 0.5em;
 		}
 		@media screen and (min-width: 43em) {
@@ -88,23 +102,16 @@ h1 {
 	margin: 0;
 	margin-bottom: -0.33em;
 	padding: 0;
+	opacity: 0.8;
 	@media screen and (min-width: @screen-medium) {
 		margin: 0;
 		border-bottom: 0;
 		display: block;
 		position: relative;
-		-webkit-transform: translateY(-7em);
-		   -moz-transform: translateY(-7em);
-		    -ms-transform: translateY(-7em);
-		     -o-transform: translateY(-7em);
-		        transform: translateY(-7em);
+		.translateY(-7em);
 	}
 	@media screen and (min-width: @screen-large) {
-		-webkit-transform: translateY(-17em);
-		   -moz-transform: translateY(-17em);
-		    -ms-transform: translateY(-17em);
-		     -o-transform: translateY(-17em);
-		        transform: translateY(-17em);
+		.translateY(-17em);
 	}
 }
 

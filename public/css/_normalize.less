@@ -395,9 +395,21 @@ table {
     border-spacing: 0;
 }
 
+/* ==========================================================================
+   Added
+   ========================================================================== */
+
 ul, ol {
   margin: 0;
   padding: 0;
+}
+
+::-moz-selection {
+  background: lighten(@color-link, 33%);
+}
+
+::selection {
+  background: lighten(@color-link, 33%);
 }
 
 .wf-loading {
