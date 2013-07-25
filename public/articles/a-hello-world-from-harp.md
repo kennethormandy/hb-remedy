@@ -1,4 +1,4 @@
-# Hello World
+# A Hello World from Harp
 
 In &ldquo;From Design Research to Theory: Evidence of a Maturing Field,&rdquo; Forlizzi, Stolterman and Zimmerman look to clearly define different kinds of design research, and investigate how they impact the design process and the creation of theories on designing.
 
