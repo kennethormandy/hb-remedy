@@ -6,6 +6,6 @@
 		"email": "",
 		"uri": "",
 		"analytics": "",
-		"disqus": ""
+		"disqus": false
 	}
 }

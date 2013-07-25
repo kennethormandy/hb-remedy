@@ -42,8 +42,26 @@ a, a:visited {
 	}
 }
 
+.comments {
+	padding-top: 5em;
+	padding-bottom: 5em;
+	background: lighten(@color-background, 5%);
+	border-width: 2px 0;
+}
+
+.hr {
+	height: 2px;
+	overflow: hidden;
+	max-width: 100%;
+}
+
+.hr-image {
+	width: 100%;
+}
+
 header, h1, h2, h3, h4, h5 {
-	font-family: "jaf-bernina-sans-condensed", "AvenirNextCondensed-Bold", "Futura-CondensedExtraBold", Futura, "Century Gothic", CenturyGothic, AppleGothic, Verdana, sans-serif
+	font-family: "jaf-bernina-sans-condensed", "AvenirNextCondensed-Bold", "Futura-CondensedExtraBold", Futura, "Century Gothic", CenturyGothic, AppleGothic, Verdana, sans-serif;
+	line-height: 1.1;
 }
 
 .opening + .container h1:first-of-type {
@@ -117,6 +135,15 @@ header, h1, h2, h3, h4, h5 {
 .post-list-item {
 	list-style: none;
 	margin: 0;
+}
+
+.post-list-link {
+	font-size: 3rem;
+	text-transform: capitalize;
+	margin-top: 1em;
+	h2, h3, h4, h5, h6 {
+		margin: 0;
+	}
 }
 
 .post-list-link {

@@ -6,5 +6,5 @@ for article in globals.public.articles.contents
     li.post-list-item
       a.post-list-link(href="/articles/#{ article.replace(/.html?/, "") }")
         h2= article.replace(/.html?/, "").split("-").join(" ")
-      if (typeof(globals.disqus) !== 'undefined') && (globals.disqus !== false) && (globals.disqus !== '')
+      if current.path[0] === 'articles' && ((typeof(globals.disqus) !== 'undefined') && (globals.disqus !== false) && (globals.disqus !== ''))
         a.post-comment-link(href="/articles/#{ article.replace(/.html?/, "") }#disqus_thread") Comments

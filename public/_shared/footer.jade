@@ -1,0 +1,18 @@
+if current.path[0] === 'articles' && current.path[1] !=='index' && ((typeof(globals.disqus) !== 'undefined') && (globals.disqus !== false) && (globals.disqus !== ''))
+  for image in globals.public.images.contents
+    if (current.path[1] + ".jpg") === image
+      .hr
+        img.hr-image(src="/images/#{ image }", alt="")
+  .comments
+    .container
+      != partial("inline")
+  for image in globals.public.images.contents
+    if (current.path[1] + ".jpg") === image
+      .hr
+        img.hr-image(src="/images/#{ image }", alt="")
+  .container
+    != partial("afterward")
+else
+  .container
+    != partial("afterward")
+    != partial("count")
