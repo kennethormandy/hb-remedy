@@ -1,18 +1,116 @@
 @import "_variables.less";
+@import "_normalize.less";
 
+html,
 body {
 	font-family: "jaf-bernino-sans";
-	background: #EEE;
-	color: #222;
-	margin: 0 1em;
+	background: @color-background;
+	color: @color-text;
+	margin: 0;
 }
 
-header,
-h1 {
-	font-family: "jaf-bernina-sans-condensed";
+a, a:visited {
+	text-decoration: none;
+	color: @color-link;
+	&:hover, &:focus {
+		color: @color-link-hover;
+	}
+	&:active {
+		color: @color-link-active;
+	}
 }
 
 .container {
-	max-width: 40em;
-	margin: 5em auto;
+	font-size: 1.25rem;
+	line-height: 1.4;
+	margin: 1.4em auto 4em auto;
+	padding: 0 1.6em;
+	transition: max-width 0.5s;
+	max-width: 28em;
+	@media screen and (min-width: @screen-medium) {
+		max-width: 36em;
+	}
+}
+
+header, h1, h2, h3, h4, h5 {
+	font-family: "jaf-bernina-sans-condensed";
+}
+
+h1 {
+	&:first-of-type {
+		top: 0;
+		color: @color-header;
+		position: absolute;
+		text-shadow: 0 0 0.3em rgba(0, 0, 0, 0.25);
+		font-size: 4rem;
+		display: block;
+		line-height: 0.95;
+		text-transform: uppercase;
+		margin-right: 2rem;
+		@media screen and (min-width: 29em) {
+			font-size: 4.75rem;
+		}
+		@media screen and (min-width: 35em) {
+			font-size: 6rem;
+			top: 0.5em;
+		}
+		@media screen and (min-width: 43em) {
+			font-size: 7rem;
+			top: 0.5em;
+		}
+		@media screen and (min-width: @screen-medium) {
+			max-width: 6.428571429em; // 45em / 7rem
+		}
+		@media screen and (min-width: @screen-large) {
+			font-size: 8rem;
+			top: 0em;
+			max-width: 5.625em; // 45em / 8rem
+		}
+		+ p:first-of-type {
+			font-size: 1.5rem;
+			line-height: 1.3;
+		}
+	}
+}
+
+.opening {
+	width: 100%;
+	max-height: 30em;
+	overflow: hidden;
+	z-index: -1;
+	border-bottom: 2px solid white;
+	margin: 0;
+	padding: 0;
+}
+
+.opening-image {
+	width: 100%;
+	margin: 0;
+	margin-bottom: -0.33em;
+	padding: 0;
+	@media screen and (min-width: @screen-medium) {
+		margin: 0;
+		border-bottom: 0;
+		display: block;
+		position: relative;
+		-webkit-transform: translateY(-7em);
+		   -moz-transform: translateY(-7em);
+		    -ms-transform: translateY(-7em);
+		     -o-transform: translateY(-7em);
+		        transform: translateY(-7em);
+	}
+	@media screen and (min-width: @screen-large) {
+		-webkit-transform: translateY(-17em);
+		   -moz-transform: translateY(-17em);
+		    -ms-transform: translateY(-17em);
+		     -o-transform: translateY(-17em);
+		        transform: translateY(-17em);
+	}
+}
+
+footer {
+	margin-top: 5em;
+	color: #888;
+	font-size: 0.9rem;
+	text-align: center
 }

@@ -1,5 +1,5 @@
 !!!
-html(lang="en", class="#{ current.path[1]!=undefined?current.path[1]:''}")
+html(lang="en")
 	head
 		meta(charset="utf-8")
 		if (typeof(globals.title) !== 'undefined')
@@ -16,5 +16,9 @@ html(lang="en", class="#{ current.path[1]!=undefined?current.path[1]:''}")
 		link(rel="stylesheet", href="/css/application.css")
 		!= partial("_shared/typekit")
 	body
-		#main.container(role="main")
+		.opening
+			img.opening-image(src="/images/header.jpg", alt="")
+		.container(role="main")
 			!= yield
+			footer
+				p Built with <a href="http://harpjs.com">Harp</a>.
