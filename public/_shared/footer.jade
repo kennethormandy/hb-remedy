@@ -16,3 +16,5 @@ else
   .container
     != partial("afterward")
     != partial("count")
+if globals.analytics !== false && (typeof(globals.disqus) !== 'undefined')
+  != partial("analytics")
