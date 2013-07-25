@@ -1,0 +1,11 @@
+# Hello World
+
+In &ldquo;From Design Research to Theory: Evidence of a Maturing Field,&rdquo; Forlizzi, Stolterman and Zimmerman look to clearly define different kinds of design research, and investigate how they impact the design process and the creation of theories on designing.
+
+The authors&rsquo; interviewees mostly consist of interaction design researchers, and behavioral researchers looking at human-computer interactions or HCI for short (Forlizzi, Stolterman, &amp; Zimmerman, 2008, 2889). Though they use this as a base to extend their research further, this is certainly their area of expertise: all three work in HCI and design, Zimmerman and Forlizzi at Carnegie Mellon University and Stolterman at Indiana University, Bloomington.
+
+The piece uses a fairly linear format, which works well. It guides the reader from the author&rsquo;s reasons and goals behind the paper, through to the methods of research use, and then to the categories of design research ultimately decided upon. While the process is presumably messy, the goal of presenting the information clearly trumps the importance of ordering developments by time.
+
+# A Header on Research
+
+The research comes from interviews conducted with design researchers and a literature review of precedents in space surrounding theory, in and outside of design. The findings from both are then detail. Forlizzi et al. suggest, based on their literature review, that the exploration of how design research results in theory is a relatively unexplored avenue. Their summary of this is quite convincing; this is partly because they level the playing field for the reader by clearly establishing the terms they are about to use. They reference Friedman&rsquo;s concise definition of theory&mdash;&ldquo;A theory in its most basic form can be thought of as a model that describes the structure, relationships, and influences between phenomena&rdquo; (Forlizzi et al., 2011)&mdash;a deceptively complex topic, and give the reader a grasp of what they are trying to link design research to. The article is significantly stronger because of this short passage.

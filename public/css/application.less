@@ -46,44 +46,42 @@ header, h1, h2, h3, h4, h5 {
 	font-family: "jaf-bernina-sans-condensed", "AvenirNextCondensed-Bold", "Futura-CondensedExtraBold", Futura, "Century Gothic", CenturyGothic, AppleGothic, Verdana, sans-serif
 }
 
-h1 {
-	&:first-of-type {
-		top: 0;
-		color: @color-header;
-		position: absolute;
-		text-shadow: 0 0 0.33em rgba(0, 0, 0, 0.5);
-		font-size: 2rem;
-		display: block;
-		line-height: 0.95;
-		text-transform: uppercase;
-		margin-right: 2rem;
-		@media screen and (min-width: @screen-small) {
-			font-size: 3.5rem;
-		}
-		@media screen and (min-width: 29em) {
-			font-size: 4.75rem;
-			border: none;
-		}
-		@media screen and (min-width: 35em) {
-			font-size: 5.5rem;
-			top: 0.5em;
-		}
-		@media screen and (min-width: 43em) {
-			font-size: 7rem;
-			top: 0.5em;
-		}
-		@media screen and (min-width: @screen-medium) {
-			max-width: 6.428571429em; // 45em / 7rem
-		}
-		@media screen and (min-width: @screen-large) {
-			font-size: 8rem;
-			top: 0em;
-			max-width: 5.625em; // 45em / 8rem
-		}
-		+ p:first-of-type {
-			font-size: 1.5rem;
-			line-height: 1.3;
-		}
+.opening + .container h1:first-of-type {
+	top: 0;
+	color: @color-header;
+	position: absolute;
+	text-shadow: 0 0 0.33em rgba(0, 0, 0, 0.5);
+	font-size: 2rem;
+	display: block;
+	line-height: 0.95;
+	text-transform: uppercase;
+	margin-right: 2rem;
+	@media screen and (min-width: @screen-small) {
+		font-size: 3.5rem;
+	}
+	@media screen and (min-width: 29em) {
+		font-size: 4.75rem;
+		border: none;
+	}
+	@media screen and (min-width: 35em) {
+		font-size: 5.5rem;
+		top: 0.5em;
+	}
+	@media screen and (min-width: 43em) {
+		font-size: 7rem;
+		top: 0.5em;
+	}
+	@media screen and (min-width: @screen-medium) {
+		max-width: 6.428571429em; // 45em / 7rem
+	}
+	@media screen and (min-width: @screen-large) {
+		font-size: 8rem;
+		top: 0em;
+		max-width: 5.625em; // 45em / 8rem
+	}
+	& + p:first-of-type {
+		font-size: 1.5rem;
+		line-height: 1.3;
 	}
 }
 
@@ -113,6 +111,16 @@ h1 {
 	@media screen and (min-width: @screen-large) {
 		.translateY(-17em);
 	}
+}
+
+.post-list,
+.post-list-item {
+	list-style: none;
+	margin: 0;
+}
+
+.post-list-link {
+	display: block;
 }
 
 footer {

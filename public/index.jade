@@ -1,0 +1,5 @@
+h1 Articles
+
+ul.post-list
+for article in globals.public.articles.contents
+  li.post-list-item: a.post-list-link(href="/articles/#{ article.replace(/.html?/, "") }")= article.replace(/.html?/, "").split("-").join(" ")
