@@ -1,0 +1,11 @@
+{
+	"globals": {
+		"title": "Remedy",
+		"description": "A Harp Boilerplate.",
+		"name": "",
+		"email": "",
+		"uri": "",
+		"analytics": "",
+		"disqus": ""
+	}
+}
