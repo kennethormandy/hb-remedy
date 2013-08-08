@@ -4,6 +4,10 @@ In &ldquo;From Design Research to Theory: Evidence of a Maturing Field,&rdquo; F
 
 The authors&rsquo; interviewees mostly consist of interaction design researchers, and behavioral researchers looking at human-computer interactions or HCI for short (Forlizzi, Stolterman, &amp; Zimmerman, 2008, 2889). Though they use this as a base to extend their research further, this is certainly their area of expertise: all three work in HCI and design, Zimmerman and Forlizzi at Carnegie Mellon University and Stolterman at Indiana University, Bloomington.
 
+> Most people would agree that being a great software developer is about understanding your tools and exercising good judgement in how (and when) to use them. The application developer that has the most success is the one that makes the tradeoffs that best facilitate the goals of the project in a way that enables the developer to quickly learn and iterate on the needs of the users.
+
+> **Sintaxi [You Half-Assed It](http://sintaxi.com/you-half-assed-it)**
+
 The piece uses a fairly linear format, which works well. It guides the reader from the author&rsquo;s reasons and goals behind the paper, through to the methods of research use, and then to the categories of design research ultimately decided upon. While the process is presumably messy, the goal of presenting the information clearly trumps the importance of ordering developments by time.
 
 # A Header on Research

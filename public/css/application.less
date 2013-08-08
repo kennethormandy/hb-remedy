@@ -150,6 +150,38 @@ header, h1, h2, h3, h4, h5 {
 	display: block;
 }
 
+blockquote {
+	font-family: "jaf-bernina-sans-condensed", "AvenirNextCondensed-Bold", "Futura-CondensedExtraBold", Futura, "Century Gothic", CenturyGothic, AppleGothic, Verdana, sans-serif;
+	color: lighten(@color-text, 20%);
+	font-weight: 400;
+	margin-left: 2em;
+	margin-right: 0;
+	&:before {
+		content: "\“";
+		display: block;
+		font-size: 10em;
+		line-height: 1;
+		position: absolute;
+		left: 0.156em;
+	}
+	p:last-child {
+		strong:only-child {
+			font-style: normal;
+			font-family: "jaf-bernino-sans", "AvenirNext-Medium", Verdana, Segoe, sans-serif;
+			display: block;
+			&:before {
+				content: "\2014";
+			}
+			a {
+				display: block;
+				color: lighten(@color-link, 20%);
+				margin-left: 1em;
+				font-weight: normal;
+			}
+		}
+	}
+}
+
 footer {
 	margin-top: 5em;
 	color: #888;
