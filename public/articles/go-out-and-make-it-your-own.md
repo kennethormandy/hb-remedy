@@ -10,6 +10,21 @@ The authors&rsquo; interviewees mostly consist of interaction design researchers
 
 The piece uses a fairly linear format, which works well. It guides the reader from the author&rsquo;s reasons and goals behind the paper, through to the methods of research use, and then to the categories of design research ultimately decided upon. While the process is presumably messy, the goal of presenting the information clearly trumps the importance of ordering developments by time.
 
-# A Header on Research
+## A Header on Research
 
-The research comes from interviews conducted with design researchers and a literature review of precedents in space surrounding theory, in and outside of design. The findings from both are then detail. Forlizzi et al. suggest, based on their literature review, that the exploration of how design research results in theory is a relatively unexplored avenue. Their summary of this is quite convincing; this is partly because they level the playing field for the reader by clearly establishing the terms they are about to use. They reference Friedman&rsquo;s concise definition of theory&mdash;&ldquo;A theory in its most basic form can be thought of as a model that describes the structure, relationships, and influences between phenomena&rdquo; (Forlizzi et al., 2011)&mdash;a deceptively complex topic, and give the reader a grasp of what they are trying to link design research to. The article is significantly stronger because of this short passage.
+<div class="pullquote" data-pullquote="They reference Friedman&rsquo;s concise definition of theory&mdash;&ldquo;A theory in its most basic form can be thought of as a model that describes the structure, relationships, and influences between phenomena&rdquo;">
+</div>
+
+The research comes from interviews conducted with design researchers and a literature review of precedents in space surrounding theory, in and outside of design. The findings from both are then detail. Forlizzi et al. suggest, based on their literature review, that the exploration of how design research results in theory is a relatively unexplored avenue. Their summary of this is quite convincing; this is partly because they level the playing field for the reader by clearly establishing the terms they are about to use.
+
+```json
+{
+  "about": {
+    "layout": false
+  }
+}
+```
+
+They reference Friedman&rsquo;s concise definition of theory&mdash;&ldquo;A theory in its most basic form can be thought of as a model that describes the structure, relationships, and influences between phenomena&rdquo; (Forlizzi et al., 2011)&mdash;a deceptively complex topic, and give the reader a grasp of what they are trying to link design research to. The article is significantly stronger because of this short passage.
+
+The research comes from interviews conducted with design researchers and a literature review of precedents in space surrounding theory, in and outside of design. The findings from both are then detail. Forlizzi et al. suggest, based on their literature review, that the exploration of how design research results in theory is a relatively unexplored avenue. Their summary of this is quite convincing; this is partly because they level the playing field for the reader by clearly establishing the terms they are about to use.

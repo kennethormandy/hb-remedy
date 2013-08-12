@@ -30,15 +30,15 @@ a, a:visited {
 .container {
 	font-size: 0.8rem;
 	max-width: 28em;
-	@media screen and (min-width: @screen-small) {
+	@media (min-width: @screen-small) {
 		font-size: 1.25rem;
 		line-height: 1.4;
 		margin: 1.4em auto 4em auto;
 		padding: 0 1.6em;
 		transition: max-width 0.5s;
 	}
-	@media screen and (min-width: @screen-medium) {
-		max-width: 36em;
+	@media (min-width: @screen-medium) {
+		max-width: 33em;
 	}
 }
 
@@ -74,25 +74,25 @@ header, h1, h2, h3, h4, h5 {
 	line-height: 0.95;
 	text-transform: uppercase;
 	margin-right: 2rem;
-	@media screen and (min-width: @screen-small) {
+	@media (min-width: @screen-small) {
 		font-size: 3.5rem;
 	}
-	@media screen and (min-width: 29em) {
+	@media (min-width: 29em) {
 		font-size: 4.75rem;
 		border: none;
 	}
-	@media screen and (min-width: 35em) {
+	@media (min-width: 35em) {
 		font-size: 5.5rem;
 		top: 0.5em;
 	}
-	@media screen and (min-width: 43em) {
+	@media (min-width: 43em) {
 		font-size: 7rem;
 		top: 0.5em;
 	}
-	@media screen and (min-width: @screen-medium) {
+	@media (min-width: @screen-medium) {
 		max-width: 6.428571429em; // 45em / 7rem
 	}
-	@media screen and (min-width: @screen-large) {
+	@media (min-width: @screen-large) {
 		font-size: 8rem;
 		top: 0em;
 		max-width: 5.625em; // 45em / 8rem
@@ -119,14 +119,14 @@ header, h1, h2, h3, h4, h5 {
 	margin-bottom: -0.33em;
 	padding: 0;
 	opacity: 0.8;
-	@media screen and (min-width: @screen-medium) {
+	@media (min-width: @screen-medium) {
 		margin: 0;
 		border-bottom: 0;
 		display: block;
 		position: relative;
 		.translateY(-7em);
 	}
-	@media screen and (min-width: @screen-large) {
+	@media (min-width: @screen-large) {
 		.translateY(-16.5em);
 	}
 }
@@ -157,7 +157,7 @@ blockquote {
 	margin-left: 1.5em;
 	margin-right: 0;
 	&:before {
-		content: "\“";
+		content: open-quote;
 		display: block;
 		font-size: 10em;
 		line-height: 1;
@@ -182,6 +182,44 @@ blockquote {
 			}
 		}
 	}
+}
+
+@media (min-width: @screen-medium) {
+	.pullquote:before {
+		content: attr(data-pullquote);
+		overflow: hidden;
+		display: block;
+		float: left;
+		width: 40%;
+		font-size: 1.66rem;
+		margin-right: 0.5em;
+		margin-bottom: 0.25em;
+		margin-top: -0.25em;
+		color: lighten(@color-text, 20%);
+		@media (min-width: 42em) {
+			margin-left: -1.5em;
+			margin-right: 1em;
+		}
+		@media (min-width: @screen-large) {
+			margin-left: -3em;
+			width: 50%;
+		}
+		font-family: "jaf-bernina-sans-condensed", "AvenirNextCondensed-Bold", "Futura-CondensedExtraBold", Futura, "Century Gothic", CenturyGothic, AppleGothic, Verdana, sans-serif;
+	}
+}
+
+pre {
+	background: @color-text;
+	padding: 0.5em;
+	border-radius: 0.125em;
+	code {
+		color: darken(@color-background, 10%);
+	}
+}
+
+code {
+	font-size: 90%;
+	font-family: "Source Code Pro", Menlo, monospace;
 }
 
 footer {
