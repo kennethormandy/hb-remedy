@@ -150,6 +150,14 @@ header, h1, h2, h3, h4, h5 {
 	display: block;
 }
 
+/* Blockquotes
+   Corresponding Markdown is:
+
+   > This is the blockquote
+	 > **Author [Source](http://example.com/article.html)**
+
+*/
+
 blockquote {
 	font-family: "jaf-bernina-sans-condensed", "AvenirNextCondensed-Bold", "Futura-CondensedExtraBold", Futura, "Century Gothic", CenturyGothic, AppleGothic, Verdana, sans-serif;
 	color: lighten(@color-text, 20%);
@@ -183,6 +191,11 @@ blockquote {
 		}
 	}
 }
+
+/* Pullquotes
+   Still working on a more Markdown-friendly solution
+   Right now, follows: http://miekd.com/articles/pull-quotes-with-html5-and-css/
+*/
 
 @media (min-width: @screen-medium) {
 	.pullquote:before {
