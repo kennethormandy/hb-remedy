@@ -1,30 +1,34 @@
 # Go out &amp; make it your own
 
-In &ldquo;From Design Research to Theory: Evidence of a Maturing Field,&rdquo; Forlizzi, Stolterman and Zimmerman look to clearly define different kinds of design research, and investigate how they impact the design process and the creation of theories on designing.
+I am by birth a Genevese; and my family is one of the most distinguished of that republic. My ancestors had been for many years counsellors and syndics; and my father had filled several public situations with honour and reputation. He was respected by all who knew him for his integrity and indefatigable attention to public business. He passed his younger days perpetually occupied by the affairs of his country.
 
-The authors&rsquo; interviewees mostly consist of interaction design researchers, and behavioral researchers looking at human-computer interactions or HCI for short (Forlizzi, Stolterman, &amp; Zimmerman, 2008, 2889). Though they use this as a base to extend their research further, this is certainly their area of expertise: all three work in HCI and design, Zimmerman and Forlizzi at Carnegie Mellon University and Stolterman at Indiana University, Bloomington.
+A variety of circumstances had prevented his marrying early, nor was it until the decline of life that he became a husband and the father of a family. As the circumstances of his marriage illustrate his character, I cannot refrain from relating them. One of his most intimate friends was a merchant, who, from a flourishing state, fell, through numerous mischances, into poverty.
 
-> Most people would agree that being a great software developer is about understanding your tools and exercising good judgement in how (and when) to use them. The application developer that has the most success is the one that makes the tradeoffs that best facilitate the goals of the project in a way that enables the developer to quickly learn and iterate on the needs of the users.
+## Measures to conceal
 
-> **Sintaxi [You Half-Assed It](http://sintaxi.com/you-half-assed-it)**
+Beaufort had taken effectual measures to conceal himself; It was ten months before my father discovered his abode. Overjoyed at this discovery, he hastened to the house, which was situated in a mean street, near the Reuss. But when he entered, misery and despair alone welcomed him. Beaufort had saved but a very small sum of money from the wreck of his fortunes; but it was sufficient to provide him with sustenance for some months, and in the meantime he hoped to procure some respectable employment in a merchant's house.
 
-The piece uses a fairly linear format, which works well. It guides the reader from the author&rsquo;s reasons and goals behind the paper, through to the methods of research use, and then to the categories of design research ultimately decided upon. While the process is presumably messy, the goal of presenting the information clearly trumps the importance of ordering developments by time.
+The interval was, consequently, spent in inaction; his grief only became more deep and rankling when he had leisure for reflection; and at length it took so fast hold of his mind that at the end of three months he lay on a bed of sickness, incapable of any exertion:
 
-## A Header on Research
+> His daughter attended him with the greatest tenderness; but she saw with despair that their little fund was rapidly decreasing, and that there was no other prospect of support. But Caroline Beaufort possessed a mind of an uncommon mould; and her courage rose to support her in her adversity. She procured plain work; she plaited straw; and by various means contrived to earn a pittance scarcely sufficient to support life.
 
-<div class="pullquote" data-pullquote="They reference Friedman&rsquo;s concise definition of theory&mdash;&ldquo;A theory in its most basic form can be thought of as a model that describes the structure, relationships, and influences between phenomena&rdquo;">
+> **Mary Shelley [Frankenstein](http://www.literature.org/authors/shelley-mary/frankenstein/chapter-01.html)**
+
+Several months passed in this manner. Her father grew worse; her time was more entirely occupied in attending him; her means of subsistence decreased; and in the tenth month her father died in her arms, leaving her an orphan and a beggar. This last blow overcame her; and she knelt by Beaufort's coffin, weeping bitterly, when my father entered the chamber. He came like a protecting spirit to the poor girl, who committed herself to his care; and after the interment of his friend, he conducted her to Geneva, and placed her under the protection of a relation. Two years after this event Caroline became his wife.
+
+<div class="pullquote" data-pullquote="He bitterly deplored the false pride which led his friend to a conduct so little worthy of the affection that united them.">
 </div>
 
-The research comes from interviews conducted with design researchers and a literature review of precedents in space surrounding theory, in and outside of design. The findings from both are then detail. Forlizzi et al. suggest, based on their literature review, that the exploration of how design research results in theory is a relatively unexplored avenue. Their summary of this is quite convincing; this is partly because they level the playing field for the reader by clearly establishing the terms they are about to use.
+There was a considerable difference between the ages of my parents, but this circumstance seemed to unite them only closer in bonds of devoted affection. There was a sense of justice in my father's upright mind, which rendered it necessary that he should approve highly to love strongly. Perhaps during former years he had suffered from the late discovered unworthiness of one beloved, and so was disposed to set a greater value on tried worth.
 
 ```json
 {
-  "about": {
-    "layout": false
+  "frankenstein": {
+    "author": "Mary Shelley"
   }
 }
 ```
 
-They reference Friedman&rsquo;s concise definition of theory&mdash;&ldquo;A theory in its most basic form can be thought of as a model that describes the structure, relationships, and influences between phenomena&rdquo; (Forlizzi et al., 2011)&mdash;a deceptively complex topic, and give the reader a grasp of what they are trying to link design research to. The article is significantly stronger because of this short passage.
+There was a show of gratitude and worship in his attachment to my mother, differing wholly from the doating fondness of age, for it was inspired by reverence for her virtues, and a desire to be the means of, in some degree, recompensing her for the sorrows she had endured, but which gave inexpressible grace to his behaviour to her. Everything was made to yield to her wishes and her convenience.
 
-The research comes from interviews conducted with design researchers and a literature review of precedents in space surrounding theory, in and outside of design. The findings from both are then detail. Forlizzi et al. suggest, based on their literature review, that the exploration of how design research results in theory is a relatively unexplored avenue. Their summary of this is quite convincing; this is partly because they level the playing field for the reader by clearly establishing the terms they are about to use.
+He strove to shelter her, as a fair exotic is sheltered by the gardener, from every rougher wind, and to surround her with all that could tend to excite pleasurable emotion in her soft and benevolent mind. Her health, and even the tranquillity of her hitherto constant spirit, had been shaken by what she had gone through. During the two years that had elapsed previous to their marriage my father had gradually relinquished all his public functions; and immediately after their union they sought the pleasant climate of italy, and the change of scene and interest attendant on a tour through that land of wonders, as a restorative for her weakened frame.
