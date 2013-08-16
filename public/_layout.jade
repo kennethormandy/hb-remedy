@@ -1,5 +1,5 @@
 !!!
-html(lang="en", class="")
+html(lang="en", class="#{ typeof(current.path[0]) !== 'undefined' || '' ? current.path[0] : '' }")
 	head
 		meta(charset="utf-8")
 		if (typeof(globals.title) !== 'undefined')

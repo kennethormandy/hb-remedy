@@ -43,20 +43,12 @@ a, a:visited {
 }
 
 .comments {
-	padding-top: 5em;
-	padding-bottom: 5em;
+	padding-top: 4em;
+	padding-bottom: 4em;
+	margin-top: 8em;
 	background: lighten(@color-background, 5%);
+	border: darken(@color-background, 5%) solid;
 	border-width: 2px 0;
-}
-
-.hr {
-	height: 2px;
-	overflow: hidden;
-	max-width: 100%;
-}
-
-.hr-image {
-	width: 100%;
 }
 
 header, h1, h2, h3, h4, h5 {
@@ -74,6 +66,7 @@ header, h1, h2, h3, h4, h5 {
 	line-height: 0.95;
 	text-transform: uppercase;
 	margin-right: 2rem;
+	// top: 0.5em;
 	@media (min-width: @screen-small) {
 		font-size: 3.5rem;
 	}
@@ -83,18 +76,16 @@ header, h1, h2, h3, h4, h5 {
 	}
 	@media (min-width: 35em) {
 		font-size: 5.5rem;
-		top: 0.5em;
 	}
 	@media (min-width: 43em) {
 		font-size: 7rem;
-		top: 0.5em;
 	}
 	@media (min-width: @screen-medium) {
 		max-width: 6.428571429em; // 45em / 7rem
 	}
 	@media (min-width: @screen-large) {
 		font-size: 8rem;
-		top: 0em;
+		top: 0;
 		max-width: 5.625em; // 45em / 8rem
 	}
 	& + p:first-of-type {
@@ -129,6 +120,12 @@ header, h1, h2, h3, h4, h5 {
 	@media (min-width: @screen-large) {
 		.translateY(-16.5em);
 	}
+}
+
+.opening-return {
+	display: none;
+	position: absolute;
+	top: 0.5em;
 }
 
 .post-list,

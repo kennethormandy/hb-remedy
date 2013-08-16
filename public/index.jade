@@ -1,10 +1,3 @@
 h1 Articles
 
-ul.post-list
-for article in globals.public.articles.contents
-  if article !== 'index.html'
-    li.post-list-item
-      a.post-list-link(href="/articles/#{ article.replace(/.html?/, "") }")
-        h2= article.replace(/.html?/, "").split("-").join(" ")
-      if (typeof(globals.disqus) !== 'undefined') && (globals.disqus !== false) && (globals.disqus !== '')
-        a.post-comment-link(href="/articles/#{ article.replace(/.html?/, "") }#disqus_thread") Comments
+!= partial("_shared/articles")
