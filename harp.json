@@ -5,6 +5,7 @@
 		"name": "Your Name",
 		"email": "you@example.com",
 		"uri": "example.com",
+		"base": "../",
 
     "typekit": "tkx1uqp",
 		"analytics": "",

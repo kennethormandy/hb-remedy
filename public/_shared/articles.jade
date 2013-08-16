@@ -1,7 +1,7 @@
 ul.post-list
 for article, slug in globals.public.articles.data
   li.post-list-item
-    a.post-list-link(href="/articles/#{ slug }")
+    a.post-list-link(href="#{ globals.base }articles/#{ slug }")
       h2= article.title
     if (typeof(globals.disqus) !== 'undefined') && (globals.disqus !== false) && (globals.disqus !== '')
-      a.post-comment-link(href="/articles/#{ slug }#disqus_thread") Comments
+      a.post-comment-link(href="#{ globals.base }articles/#{ slug }#disqus_thread") Comments
