@@ -1,4 +1,4 @@
-if current.path[0] === 'articles' && current.path[1] !=='index' && ((typeof(globals.disqus) !== 'undefined') && (globals.disqus !== false) && (globals.disqus !== ''))
+if current.path[0] === 'articles' && current.path[1] !=='index' && disqus
   .comments
     .container
       != partial("comments")
@@ -8,5 +8,5 @@ else
   .container
     != partial("afterward")
     != partial("comment-count")
-if globals.analytics !== false && (typeof(globals.analytics) !== 'undefined')
+if analytics
   != partial("analytics")

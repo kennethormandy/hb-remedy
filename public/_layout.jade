@@ -2,12 +2,9 @@
 html(lang="en", class="#{ typeof(current.path[0]) !== 'undefined' || '' ? current.path[0] : '' }")
 	head
 		meta(charset="utf-8")
-		if (typeof(globals.title) !== 'undefined')
-			title= globals.title
-		if (typeof(globals.description) !== 'undefined')
-			meta(name="description", content="#{ globals.description }")
-		if (typeof(globals.name) !== 'undefined')
-			meta(name="author", content="#{ globals.name }")
+		title= title
+		meta(name="description", content="#{ description }")
+		meta(name="author", content="#{ name }")
 		meta(name="handheldfriendly", content="true")
 		meta(name="mobileoptimized", content="320")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -17,7 +14,7 @@ html(lang="en", class="#{ typeof(current.path[0]) !== 'undefined' || '' ? curren
 		!= partial("_shared/font-face")
 	body
 		if current.path[0] === 'articles'
-			for image in globals.public.images.contents
+			for image in public.images.contents
 				if (current.path[1] + ".jpg") === image
 					.opening
 						img.opening-image(src="/images/#{ image }", alt="")
