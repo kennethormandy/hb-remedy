@@ -1,7 +1,19 @@
 ul.post-list
+
+i = 0
+if typeof(limit)==='undefined'
+  limit = 0
+
 for article, slug in public.articles.data
-  li.post-list-item
-    a.post-list-link(href="/articles/#{ slug }")
-      h2= article.title
-    if disqus
-      a.post-comment-link(href="/articles/#{ slug }#disqus_thread") Comments
+  - i++
+  if limit===0 || i <= limit
+    li.post-list-item
+      a.post-list-link(href="/articles/#{ slug }")
+        h4= article.title
+      if disqus
+        a.post-comment-link(href="/articles/#{ slug }#disqus_thread") Comments
+
+//- subtract one for articles/index.jade
+if limit!=0 && limit < (public.articles.contents.length - 1)
+  footer
+    h2: a(href="/articles") View all articles
