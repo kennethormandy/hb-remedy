@@ -1,0 +1,43 @@
+h1 Using Moment.js with Harp
+
+p This article’s date is <code>#{ date }</code>. But I can format it however I want using Moment.js & Harp:
+
+ul
+  li= moment(date).format('MMMM Do YYYY, h:mm:ss a');
+  li= moment(date).format('dddd');
+  li= moment(date).format("MMM Do YY");
+  li= moment(date).format('YYYY [escaped: #{ hello }] YYYY');
+  li= moment(date).format();
+
+h2 Timeago
+
+ul
+  li= moment("20111031", "YYYYMMDD").fromNow();
+  li= moment("20120620", "YYYYMMDD").fromNow();
+  li= moment().startOf('day').fromNow();
+  li= moment().endOf('day').fromNow();
+  li= moment().startOf('hour').fromNow();
+
+h2 Calendar Time
+
+ul
+  li= moment().subtract('days', 10).calendar();
+  li= moment().subtract('days', 6).calendar();
+  li= moment().subtract('days', 3).calendar();
+  li= moment().subtract('days', 1).calendar();
+  li= moment().calendar();
+  li= moment().add('days', 1).calendar();
+  li= moment().add('days', 3).calendar();
+  li= moment().add('days', 10).calendar();
+
+h2 Internationalization
+
+ul
+  li= moment().format('L');
+  li= moment().format('l');
+  li= moment().format('LL');
+  li= moment().format('ll');
+  li= moment().format('LLL');
+  li= moment().format('lll');
+  li= moment().format('LLLL');
+  li= moment().format('llll');

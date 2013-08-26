@@ -1,0 +1,12 @@
+for folder in public.images
+  for subfolder in folder
+    if typeof(subfolder)==='object'
+      for image in subfolder
+        img(src="/images/#{ current.path[1] }/#{ image }")
+
+//- Should look for an image named with 
+//- the same as the post, or a folder
+//- of images and create a gallery
+//- Prefer `_data.json` over `contents`
+
+!= yield

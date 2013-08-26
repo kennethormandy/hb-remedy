@@ -1,19 +1,21 @@
-ul.post-list
-
 i = 0
 if typeof(limit)==='undefined'
   limit = 0
 
-for article, slug in public.articles.data
-  - i++
-  if limit===0 || i <= limit
-    li.post-list-item
-      a.post-list-link(href="/articles/#{ slug }")
-        h4= article.title
-      if disqus
-        a.post-comment-link(href="/articles/#{ slug }#disqus_thread") Comments
+ul.post-list
+  for article, slug in public.articles.data
+    - i++
+    if limit===0 || i <= limit
+      li(class="post-item#{ article.type ? ' post-' + article.type : ''}")
+        a.post-item-title(href="/articles/#{ slug }")
+          h4= article.title
+        ul.post-meta-list
+          if article.date
+            li.post-meta-item.post-date= moment(article.date).fromNow()
+          if disqus
+            li.post-meta-item
+              a.post-comment-link(href="/articles/#{ slug }#disqus_thread") Comments
 
 //- subtract one for articles/index.jade
 if limit!=0 && limit < (public.articles.contents.length - 1)
-  footer
-    h2: a(href="/articles") View all articles
+  a(href="/articles") View all articles
