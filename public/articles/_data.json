@@ -1,4 +1,8 @@
 {
+  "a-simple-blog": {
+    "title": "A Simple Blog",
+    "date": "2013-09-01"
+  },
   "go-out-and-make-it-your-own": {
     "title": "Go Out & Make It Your Own",
     "date": "2013-08-19"
@@ -17,12 +21,8 @@
     "title": "Using Moment.js with Harp",
     "date": "2013-02-23"
   },
-  "example-5": {
-    "title": "Example 5",
-    "date": "2012-10-25"
-  },
-  "example-6": {
-    "title": "Example 6",
+  "this-is-the-test-of-a-title-that-is-pretty-long": {
+    "title": "This is the test of a title that’s pretty long: the full story pt. II",
     "date": "2012-10-16"
   },
   "example-7": {

@@ -1,12 +1,4 @@
-if current.path[0] === 'articles' && current.path[1] !=='index' && disqus
-  .comments
-    .container
-      != partial("comments")
-  .container
-    != partial("afterward")
-else
-  .container
-    != partial("afterward")
-    != partial("comment-count")
-if analytics
-  != partial("analytics")
+footer
+  if current.path[0] !== 'index' && current.path[1] !== 'index'
+    p: a(href="/") Home
+  p Built with <a href="http://harpjs.com">Harp</a>.

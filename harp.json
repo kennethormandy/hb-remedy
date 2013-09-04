@@ -1,13 +1,14 @@
 {
-	"globals": {
-		"title": "Remedy",
-		"description": "A Harp Boilerplate.",
-		"name": "Your Name",
-		"email": "you@example.com",
-		"uri": "example.com",
+  "globals": {
+    "title": "Remedy",
+    "description": "A Harp Boilerplate.",
+    "name": "Your Name",
+    "email": "you@example.com",
+    "uri": "example.com",
 
-    "typekit": "tkx1uqp",
-		"analytics": "",
-		"disqus": "harp-democamp"
+    "postlimit": false,
+    "typekit": false,
+    "analytics": false,
+    "disqus": false
   }
 }

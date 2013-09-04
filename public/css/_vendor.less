@@ -3,3 +3,10 @@
       -ms-transform: translateY(@y);
           transform: translateY(@y);
 }
+
+.font-feature-settings(@arguments...) {
+  -webkit-font-feature-settings: @arguments;
+     -moz-font-feature-settings: @arguments;
+      -ms-font-feature-settings: @arguments;
+          font-feature-settings: @arguments;
+}

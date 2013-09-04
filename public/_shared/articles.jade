@@ -1,21 +1,28 @@
+!= partial("../js/moment")
+
 i = 0
-if typeof(limit)==='undefined'
-  limit = 0
 
 ul.post-list
+  //- for each article in the _data.json file in public/articles
   for article, slug in public.articles.data
+    //- add one to i (the dash indicates JavaScript)
     - i++
-    if limit===0 || i <= limit
+    //- If there is no postlimit or it's under the postlimit
+    if postlimit===false || i <= postlimit
       li(class="post-item#{ article.type ? ' post-' + article.type : ''}")
         a.post-item-title(href="/articles/#{ slug }")
           h4= article.title
         ul.post-meta-list
+          li.post-meta-item= name
           if article.date
             li.post-meta-item.post-date= moment(article.date).fromNow()
-          if disqus
+          //- If Disqus comments are turned on in harp.json
+          //- and if they are turned on for this article
+          if disqus && article.disqus !== false
             li.post-meta-item
               a.post-comment-link(href="/articles/#{ slug }#disqus_thread") Comments
 
+
 //- subtract one for articles/index.jade
-if limit!=0 && limit < (public.articles.contents.length - 1)
+if postlimit!=0 && postlimit < (public.articles.contents.length - 1)
   a(href="/articles") View all articles
