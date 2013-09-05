@@ -1,36 +1,13 @@
 {
-  "a-simple-blog": {
-    "title": "A Simple Blog",
+  "index": {
+    "layout": "../_layout"
+  },
+  "welcome-to-harp": {
+    "title": "Welcome to Harp",
     "date": "2013-09-01"
   },
   "go-out-and-make-it-your-own": {
     "title": "Go Out & Make It Your Own",
     "date": "2013-08-19"
-  },
-  "typogr-js": {
-    "title": "Using Typogr.js with Harp",
-    "date": "2013-07-02"
-  },
-  "media-post": {
-    "title": "Work-in-progress media post",
-    "type": "media",
-    "source": "http://www.flickr.com/photos/25751498@N06/",
-    "date": "2013-05-01"
-  },
-  "moment-js": {
-    "title": "Using Moment.js with Harp",
-    "date": "2013-02-23"
-  },
-  "this-is-the-test-of-a-title-that-is-pretty-long": {
-    "title": "This is the test of a title that’s pretty long: the full story pt. II",
-    "date": "2012-10-16"
-  },
-  "example-7": {
-    "title": "Example 7",
-    "date": "2010-07-24"
-  },
-  "example-8": {
-    "title": "Example 8",
-    "date": "2009-01-01"
   }
 }

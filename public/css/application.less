@@ -10,6 +10,8 @@ html {
   line-height: @line-height-base;
   font-variant: normal;
   .font-feature-settings("onum" 1, "pnum" 1, "kern" false, "liga" 1);
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -32,13 +34,6 @@ header, h1, h2, h3, h4, h5 {
   font-family: @font-family-base;
   line-height: 1.05;
   margin: 0;
-}
-
-footer {
-  margin-top: 5em;
-  color: #888;
-  font-size: 0.9rem;
-  text-align: center;
 }
 
 /* Web Fonts */
@@ -120,9 +115,6 @@ footer {
   display: block;
 }
 
-.post-meta-list {
-}
-
 .post-meta-item {
   display: inline-block;
   margin-left: 0.75em;
@@ -133,7 +125,7 @@ footer {
 
 .post-meta-date {
   display: block;
-  color: @color-gray-dark;
+  color: @color-text-lighter;
   @media (min-width: @screen-medium) {
     width: 10rem;
     margin-left: -10rem;
@@ -176,7 +168,10 @@ footer {
   width: 100%;
   position: absolute;
   color: @color-header;
-  text-shadow: 0 0 2rem rgba(0, 0, 0, 0.4);
+  text-shadow: 0 0 1rem rgba(0, 0, 0, 0.8);
+  .opening-title {
+    text-shadow: 0 0 2rem rgba(0, 0, 0, 0.4);  
+  }
 }
 
 .opening-title {
@@ -343,6 +338,7 @@ pre {
 code {
   font-size: 90%;
   font-family: @font-family-monospace;
+  color: @color-text-light;
 }
 
 /* Comments */
@@ -352,8 +348,16 @@ code {
   padding-bottom: 4em;
   margin-top: 8em;
   background: @color-gray;
-  border: @color-gray solid;
-  border-width: 2px 0;
 }
+
+/* Footer */
+
+.footer {
+  margin-bottom: 0;
+  color: #888;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
 
 @import "fonts/font-face";

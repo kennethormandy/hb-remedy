@@ -6,23 +6,24 @@ i = 0
 ul.post-list
   //- for each article in the _data.json file in public/articles
   for article, slug in public.articles.data
-    //- add one to i (the dash indicates JavaScript)
-    - i++
-    //- If there is no postlimit or it's under the postlimit
-    if postlimit===false || i <= postlimit
-      li(class="post-item#{ article.type ? ' post-' + article.type : ''}")
-        a(href="/articles/#{ slug }")
-          if article.date
-            span.post-meta-date.post-date!= typogr.typogrify(moment(article.date).format("MMM. Do YYYY"))
-          h4.post-item-title= article.title
-        ul.post-meta-list
-          if typeof(author)!=='undefined'
-            li.post-meta-item= author || name
-          //- If Disqus comments are turned on in harp.json
-          //- and if they are turned on for this article
-          if disqus && article.disqus !== false
-            li.post-meta-item
-              a.post-comment-link(href="/articles/#{ slug }#disqus_thread") Comments
+    if slug !== "index"
+      //- add one to i (the dash indicates JavaScript)
+      - i++
+      //- If there is no postlimit or it's under the postlimit
+      if postlimit===false || i <= postlimit
+        li(class="post-item#{ article.type ? ' post-' + article.type : ''}")
+          a(href="/articles/#{ slug }")
+            if article.date
+              span.post-meta-date.post-date!= typogr.typogrify(moment(article.date).format("MMM. Do YYYY"))
+            h4.post-item-title= article.title
+          ul.post-meta-list
+            if typeof(author)!=='undefined'
+              li.post-meta-item= author || name
+            //- If Disqus comments are turned on in harp.json
+            //- and if they are turned on for this article
+            if disqus && article.disqus !== false
+              li.post-meta-item
+                a.post-comment-link(href="/articles/#{ slug }#disqus_thread") Comments
 
 
 //- subtract one for articles/index.jade

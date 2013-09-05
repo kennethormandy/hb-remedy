@@ -1,62 +1,14 @@
 !!!
 html(lang="en")
   head
-    meta(charset="utf-8")
-    title= title
-    meta(name="description", content="#{ description }")
-    meta(name="author", content="#{ name }")
-    meta(name="handheldfriendly", content="true")
-    meta(name="mobileoptimized", content="320")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="cleartype", content="on")
-    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
-    link(rel="stylesheet", href="/css/application.css")
+    != partial("_shared/head")
     != partial("_shared/font-face")
     != partial("js/moment")
     != partial("js/typogr")
   body
-    //- For each image in public/images/
-    for image in public.images.contents
-      if image === current.path[1] + (".jpg" || ".png" || ".svg" || ".gif")
-        //- If and image file matches the current path
-        .opening
-          //- Use it as the opening image
-          img.opening-image(src="/images/#{ image }", alt="")
-          header.opening-header
-            .container
-              if title
-                h1.opening-title(class="#{ title.length > 30 ? 'opening-title--long' : '' }")!= typogr.typogrify(title)
-              if date
-                time.opening-time(datetime="#{ date }")!= typogr.typogrify(moment(date).format('MMMM Do YYYY'))
+    .container.container--articles(role="main")
+      != typogr.typogrify(yield)
 
-
-    .container(role="main", class="#{ typeof(type)!=='undefined' ? ' post-' + type : '' }#{ current.path[0]==='index' && typeof(current.path[1])==='undefined' || current.path[0]==='articles' && current.path[1]==='index' ? 'container--articles' : '' }")
-      //- If there is an article type in _data.json
-      if typeof(type)!=='undefined'
-        //- Pass in yield to the partial with the same name
-        != partial("_shared/type/" + type, { yield: yield })
-      else //- Otherwise, Typogrify and render the yield here
-        != typogr.typogrify(yield)
-
-    //- If the current path articles/
-    if current.path[0] === 'articles'
-      //- And it’s the index, and Disqus is set to true
-      if current.path[1] !=='index' && disqus
-        .comments
-          .container
-            //- Bring in the comments partial
-            != partial("_shared/comments")
-        != partial("_shared/footer")
-      else
-        //- Otherwise, bring in the footer and comment-count script
-        .container
-          != partial("_shared/footer")
-          if disqus
-            != partial("_shared/comment-count")
-    else
-      //- Otherwise, just bring in the footer
-      .container.container--footer
-        != partial("_shared/footer")
-
-  if analytics
-      != partial("_shared/analytics")
+    != partial("_shared/footer")
+    if disqus
+      != partial("_shared/comment-count")
