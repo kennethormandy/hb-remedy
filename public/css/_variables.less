@@ -1,9 +1,9 @@
 // Font Stacks
 // ===========
 
-@font-family-sans-serif: "Source Sans Pro", "AvenirNext-Medium", Verdana, Segoe, sans-serif;
+@font-family-sans-serif: "Source Sans Pro", "source-sans-pro", "AvenirNext-Medium", Verdana, Segoe, sans-serif;
 @font-family-serif: Georgia, serif;
-@font-family-monospace: "Source Code Pro", Monaco, Menlo, Consolas, "Courier New", monospace;
+@font-family-monospace: "Source Code Pro", "source-code-pro", Monaco, Menlo, Consolas, "Courier New", monospace;
 
 @font-family-base: @font-family-sans-serif;
 @font-family-alternate: @font-family-sans-serif;
@@ -17,11 +17,13 @@
 // Colors
 // ======
 
-@color-background: #E0E0E0;
+@color-background: #F2F2F2;
 @color-text: #444;
+@color-text-light: lighten(@color-text, 20%);
 @color-header: #EAEAEA;
 
 @color-gray: darken(@color-background, 5%);
+@color-gray-dark: darken(@color-background, 25%);
 @color-blue: #e34265;
 
 @color-link: #46788F;
@@ -33,5 +35,5 @@
 // =============
 
 @screen-small: 23em;
-@screen-medium: 55em;
+@screen-medium: 40em;
 @screen-large: 70em;

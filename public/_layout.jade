@@ -30,8 +30,7 @@ html(lang="en")
                 time.opening-time(datetime="#{ date }")!= typogr.typogrify(moment(date).format('MMMM Do YYYY'))
 
 
-    .container(role="main", class="#{ typeof(type)!=='undefined' ? ' post-' + type : '' }")
-
+    .container(role="main", class="#{ typeof(type)!=='undefined' ? ' post-' + type : '' }#{ current.path[0]==='index' && typeof(current.path[1])==='undefined' || current.path[0]==='articles' && current.path[1]==='index' ? 'container--articles' : '' }")
       //- If there is an article type in _data.json
       if typeof(type)!=='undefined'
         //- Pass in yield to the partial with the same name
@@ -47,16 +46,17 @@ html(lang="en")
           .container
             //- Bring in the comments partial
             != partial("_shared/comments")
-        .container
-          != partial("_shared/footer")
+        != partial("_shared/footer")
       else
         //- Otherwise, bring in the footer and comment-count script
         .container
           != partial("_shared/footer")
-          != partial("_shared/comment-count")
+          if disqus
+            != partial("_shared/comment-count")
     else
       //- Otherwise, just bring in the footer
-      != partial("_shared/footer")
+      .container.container--footer
+        != partial("_shared/footer")
 
   if analytics
       != partial("_shared/analytics")

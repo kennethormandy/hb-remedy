@@ -1,5 +1,6 @@
+// @import "fonts/font-face" at bottom
 @import "_variables.less";
-@import "_vendor.less";
+@import "_mixins.less";
 @import "_normalize.less";
 
 html {
@@ -18,6 +19,7 @@ body {
 a, a:visited {
   text-decoration: none;
   color: @color-link;
+  .transition(color 0.1s ease-in-out);
   &:hover, &:focus {
     color: @color-link-hover;
   }
@@ -28,7 +30,7 @@ a, a:visited {
 
 header, h1, h2, h3, h4, h5 {
   font-family: @font-family-base;
-  line-height: 1.1;
+  line-height: 1.05;
   margin: 0;
 }
 
@@ -36,12 +38,25 @@ footer {
   margin-top: 5em;
   color: #888;
   font-size: 0.9rem;
-  text-align: center
+  text-align: center;
 }
 
 /* Web Fonts */
 
+.wf-loading {
+  visibility: hidden;
+}
 
+.wf-active,
+.wf-inactive {
+  visibility: visible;
+}
+
+.sc {
+  font-family: "source-sans-pro-sc", @font-family-base;
+  text-transform: lowercase;
+  .font-feature-settings("smcp" 1, "c2sc" 1, "cpsp" 1);
+}
 
 /* Container
    For the main content and
@@ -50,7 +65,7 @@ footer {
 
 .container {
   max-width: 28em;
-  margin: 1.4em auto 4em auto;
+  margin: 3em auto 4em auto;
   padding: 0 1.6em;
   transition: max-width 0.5s;
   img {
@@ -61,7 +76,75 @@ footer {
   }
 }
 
-/* Opening Image */
+.container--articles {
+  @media (min-width: @screen-medium) {
+    padding-left: 10rem;
+  }
+}
+
+/* Post List Header */
+
+.post-list-header {
+  margin-bottom: 3em;
+}
+
+.post-list-header-title {
+  font-weight: 400;
+  strong {
+    font-weight: 900;
+  }
+}
+
+/* Post List */
+
+.post-list,
+.post-item,
+.post-meta-list {
+  list-style: none;
+}
+
+.post-list {
+  margin-bottom: 3em;
+}
+
+.post-item {
+  margin-bottom: 3em;
+  .clearfix();
+}
+
+.post-item-title {
+  font-size: 3rem;
+}
+
+.post-item-title {
+  display: block;
+}
+
+.post-meta-list {
+}
+
+.post-meta-item {
+  display: inline-block;
+  margin-left: 0.75em;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.post-meta-date {
+  display: block;
+  color: @color-gray-dark;
+  @media (min-width: @screen-medium) {
+    width: 10rem;
+    margin-left: -10rem;
+    padding-right: 1em;
+    margin-top: 0.15em;
+    float: left;
+    text-align: right;    
+  }
+}
+
+/* Post Opening */
 
 .opening {
   width: 100%;
@@ -75,7 +158,7 @@ footer {
     max-height: 27rem;
   }
   & + .container {
-    p:first-of-type {
+    > p:first-of-type {
       font-size: 1.5rem;
       line-height: @line-height-base;
     }
@@ -93,7 +176,7 @@ footer {
   width: 100%;
   position: absolute;
   color: @color-header;
-  text-shadow: 0 0 1.75rem rgba(0, 0, 0, 0.5);
+  text-shadow: 0 0 2rem rgba(0, 0, 0, 0.4);
 }
 
 .opening-title {
@@ -122,6 +205,7 @@ footer {
 
 .opening-title--long {
   font-size: 2rem;
+  text-transform: none;
   @media (min-width: 30rem) {
     font-size: 2.5rem;
   }
@@ -157,42 +241,6 @@ footer {
   top: 0.5em;
 }
 
-.post-list,
-.post-item,
-.post-meta-list {
-  list-style: none;
-}
-
-.post-list {
-  margin-bottom: 3em;
-}
-
-.post-item {
-  margin-bottom: 2em;
-}
-
-.post-item-title {
-  font-size: 3rem;
-  h2, h3, h4, h5, h6 {
-    margin: 0;
-  }
-}
-
-.post-item-title {
-  display: block;
-}
-
-.post-meta-list {
-}
-
-.post-meta-item {
-  display: inline-block;
-  margin-left: 0.75em;
-  &:first-child {
-    margin-left: 0;
-  }
-}
-
 /* Blockquotes
    Corresponding Markdown is:
 
@@ -203,23 +251,27 @@ footer {
 
 blockquote {
   font-family: @font-family-alternate;
-  color: lighten(@color-text, 20%);
+  font-style: italic;
+  color: @color-text-light;
   font-weight: 400;
-  margin-left: 1.5em;
+  margin-left: 0;
   margin-right: 0;
   &:before {
+    color: lighten(@color-text, 40%);
     content: open-quote;
     display: block;
-    font-size: 10em;
+    font-size: 8em;
     line-height: 1;
     position: relative;
     text-align: right;
     float: left;
-    margin-left: -0.4em;
+    margin-top: -0.1em;
+    margin-left: -0.5em;
   }
   p:last-child {
     strong:only-child {
       font-style: normal;
+      font-weight: 600;
       font-family: @font-family-base;
       display: block;
       &:before {
@@ -228,8 +280,8 @@ blockquote {
       a {
         display: block;
         color: lighten(@color-link, 20%);
-        margin-left: 1em;
-        font-weight: normal;
+        margin-left: 1rem; // One rem should equal the width of the em dash
+        font-weight: 400;
       }
     }
   }
@@ -251,7 +303,7 @@ blockquote {
     font-size: 1.66rem;
     margin-right: 0.5em;
     margin-bottom: 0.25em;
-    color: lighten(@color-text, 20%);
+    color: @color-text-light;
     @media (min-width: 42em) {
       margin-left: -1.5em;
       margin-right: 1em;
@@ -303,3 +355,5 @@ code {
   border: @color-gray solid;
   border-width: 2px 0;
 }
+
+@import "fonts/font-face";

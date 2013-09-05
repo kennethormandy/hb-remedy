@@ -1,4 +1,5 @@
 != partial("../js/moment")
+!= partial("../js/typogr")
 
 i = 0
 
@@ -10,12 +11,13 @@ ul.post-list
     //- If there is no postlimit or it's under the postlimit
     if postlimit===false || i <= postlimit
       li(class="post-item#{ article.type ? ' post-' + article.type : ''}")
-        a.post-item-title(href="/articles/#{ slug }")
-          h4= article.title
-        ul.post-meta-list
-          li.post-meta-item= name
+        a(href="/articles/#{ slug }")
           if article.date
-            li.post-meta-item.post-date= moment(article.date).fromNow()
+            span.post-meta-date.post-date!= typogr.typogrify(moment(article.date).format("MMM. Do YYYY"))
+          h4.post-item-title= article.title
+        ul.post-meta-list
+          if typeof(author)!=='undefined'
+            li.post-meta-item= author || name
           //- If Disqus comments are turned on in harp.json
           //- and if they are turned on for this article
           if disqus && article.disqus !== false
