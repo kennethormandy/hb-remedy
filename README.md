@@ -12,7 +12,7 @@ harp server hb-remedy
 
 Now visit [harpdev.io:9000](http://harpdev.io:9000) in your browser.
 
-![A screenshot of an article in this Harp boilerplate.](https://raw.github.com/kennethormandy/hb-remedy/master/public/images/screenshot.png)
+![A screenshot of an article in this Harp boilerplate.](https://raw.github.com/kennethormandy/hb-remedy/5b4af26eb5f56b4341016f2ed84d9ad560edcfcc/public/images/screenshot.png)
 
 ### hb-remedy supports&hellip;
 

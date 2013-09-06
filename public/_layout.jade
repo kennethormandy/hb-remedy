@@ -9,6 +9,8 @@ html(lang="en")
     .container.container--articles(role="main")
       != typogr.typogrify(yield)
 
-    != partial("_shared/footer")
+      != partial("_shared/footer")
     if disqus
       != partial("_shared/comment-count")
+    if analytics
+      != partial("_shared/analytics")

@@ -47,6 +47,8 @@ header, h1, h2, h3, h4, h5 {
   visibility: visible;
 }
 
+/* Typogr.js */
+
 .sc {
   font-family: "source-sans-pro-sc", @font-family-base;
   text-transform: lowercase;
@@ -60,7 +62,7 @@ header, h1, h2, h3, h4, h5 {
 
 .container {
   max-width: 28em;
-  margin: 3em auto 4em auto;
+  margin: 0 auto 4em auto;
   padding: 0 1.6em;
   transition: max-width 0.5s;
   img {
@@ -72,6 +74,7 @@ header, h1, h2, h3, h4, h5 {
 }
 
 .container--articles {
+  margin-top: 2em;
   @media (min-width: @screen-medium) {
     padding-left: 10rem;
   }
@@ -148,6 +151,9 @@ header, h1, h2, h3, h4, h5 {
   min-height: 5em;
   .opening-header {
     max-height: 27rem;
+  }
+  .container {
+    margin-top: 2em;
   }
   & + .container {
     > p:first-of-type {
@@ -352,12 +358,24 @@ code {
 
 /* Footer */
 
-.footer {
-  margin-bottom: 0;
-  color: #888;
-  font-size: 0.9rem;
-  text-align: center;
+.return {
+  margin-top: 2em;
+  display: inline-block;
+  padding: 1em;
+  margin-left: -1em;
 }
 
+.footer {
+  font-size: 0.8em;
+  margin-bottom: 0;
+  margin-top: 4em;
+  color: @color-text-lighter;
+  a, &:visited {
+    color: @color-text-light;
+    &:hover, &:active, &:focus {
+      color: @color-text;
+    }
+  }
+}
 
 @import "fonts/font-face";
