@@ -3,8 +3,6 @@ html(lang="en")
   head
     != partial("../_shared/head")
     != partial("../_shared/font-face")
-    != partial("../js/moment")
-    != partial("../js/typogr")
   body
     //- For each image in public/images/
     for image in public.images.contents
@@ -17,13 +15,12 @@ html(lang="en")
             .container
               a(href="/").opening-return Home
               if title
-                h1.opening-title(class="#{ title.length > 30 ? 'opening-title--long' : '' }")
-                  != typogr.typogrify(title)
+                h1.opening-title(class="#{ title.length > 30 ? 'opening-title--long' : '' }")!= title
               if date
                 time.opening-time(datetime="#{ date }")
-                  != typogr.typogrify(moment(date).format('MMMM Do YYYY'))
+                  != date
     .container(role="main", class="#{ typeof(type)!=='undefined' ? ' post-' + type : '' }")
-      != typogr.typogrify(yield)
+      != yield
       if disqus
         .comments
           .container

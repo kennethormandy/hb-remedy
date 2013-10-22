@@ -10,16 +10,16 @@ git clone https://github.com/kennethormandy/hb-remedy.git
 harp server hb-remedy
 ```
 
-Now visit [harpdev.io:9000](http://harpdev.io:9000) in your browser.
+Now visit [localhost:9000](http://localhost:9000) in your browser.
 
 ![A screenshot of an article in this Harp boilerplate.](https://raw.github.com/kennethormandy/hb-remedy/5b4af26eb5f56b4341016f2ed84d9ad560edcfcc/public/images/screenshot.png)
 
 ### hb-remedy supports&hellip;
 
-* [typogr.js](https://github.com/ekalinin/typogr.js/tree/) and [moment.js](http://momentjs.com) on the web server side, using [Harp](http://harpjs.com)
-* Commenting with Disqus
+* Comments with Disqus
+* Fonts via Google Fonts or Typekit
 * Per-post banners
-* Pullquotes and blockquote from Markdown
+* Pullquotes and blockquotes from Markdown
 
 ### Photographs
 

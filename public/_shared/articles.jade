@@ -1,6 +1,3 @@
-!= partial("../js/moment")
-!= partial("../js/typogr")
-
 i = 0
 
 ul.post-list
@@ -14,7 +11,7 @@ ul.post-list
         li(class="post-item#{ article.type ? ' post-' + article.type : ''}")
           a(href="/articles/#{ slug }")
             if article.date
-              span.post-meta-date.post-date!= typogr.typogrify(moment(article.date).format("MMM. Do YYYY"))
+              span.post-meta-date.post-date!= article.date
             h4.post-item-title= article.title
           ul.post-meta-list
             if typeof(author)!=='undefined'

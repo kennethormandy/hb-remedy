@@ -3,11 +3,9 @@ html(lang="en")
   head
     != partial("_shared/head")
     != partial("_shared/font-face")
-    != partial("js/moment")
-    != partial("js/typogr")
   body
     .container.container--articles(role="main")
-      != typogr.typogrify(yield)
+      != yield
 
       != partial("_shared/footer")
     if disqus
