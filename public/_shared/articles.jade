@@ -2,7 +2,7 @@ i = 0
 
 ul.post-list
   //- for each article in the _data.json file in public/articles
-  for article, slug in public.articles.data
+  for article, slug in public.articles._data
     if slug !== "index"
       //- add one to i (the dash indicates JavaScript)
       - i++
@@ -24,5 +24,5 @@ ul.post-list
 
 
 //- subtract one for articles/index.jade
-if postlimit!=0 && postlimit < (public.articles.contents.length - 1)
+if postlimit!=0 && postlimit < (public.articles._contents.length - 1)
   a(href="/articles") View all articles

@@ -5,7 +5,7 @@ html(lang="en")
     != partial("../_shared/font-face")
   body
     //- For each image in public/images/
-    for image in public.images.contents
+    for image in public.images._contents
       if image === current.path[1] + (".jpg" || ".png" || ".svg" || ".gif")
         //- If and image file matches the current path
         .opening
