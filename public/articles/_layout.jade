@@ -5,7 +5,7 @@ html(lang="en")
     != partial("../_shared/font-face")
   body
     if published !== false || environment === 'development'
-      .opening(class="#{ environment === 'development' ? 'post-unpublished' : '' }")
+      .opening(class="#{ published === false ? 'post-unpublished' : '' }")
         for image in public.images._contents
           if image === current.path[1] + (".jpg" || ".png" || ".svg" || ".gif")
             img.opening-image(src="/images/#{ image }", alt="")
