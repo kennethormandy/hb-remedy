@@ -14,22 +14,23 @@ for article, slug in public.articles._data
     performing the desired operations.
     In this case, sorting by date from newest
     to olders, and stopping at the previously
-    defined post postlimit.
+    defined post postlimit.  
 
 ul.post-list
   //- for each article in the _data.json file in public/articles
   for article in articles.sort(function(a,b){ a = new Date(a.date); b = new Date(b.date); return b<a?-1:b>a?1:0; }).slice(0, postlimit)
-    li(class="post-item#{ article.type ? ' post-' + article.type : ''}")
-      a(href="/articles/#{ article.slug }")
-        time.post-meta-date.post-date(datetime="#{ new Date(article.date }")= article.date
-        h4.post-item-title= article.title
-      ul.post-meta-list
-        li.post-meta-item= author || name
-        //- If Disqus comments are turned on in harp.json
-        //- and if they are turned on for this article
-        if disqus && article.disqus !== false
-          li.post-meta-item
-            a.post-comment-link(href="/articles/#{ article.slug }#disqus_thread") Comments
+    if (environment==='production' && article.published !== false) || (environment==='development')
+      li.post-item(class="#{ article.published===false ? 'post-item-unpublished' : '' }")
+        a(href="/articles/#{ article.slug }")
+          time.post-meta-date.post-date(datetime="#{ new Date(article.date }")= article.date
+          h4.post-item-title= article.title
+        ul.post-meta-list
+          li.post-meta-item= author || name
+          //- If Disqus comments are turned on in harp.json
+          //- and if they are turned on for this article
+          if disqus && article.disqus !== false
+            li.post-meta-item
+              a.post-comment-link(href="/articles/#{ article.slug }#disqus_thread") Comments
 
 //- If there are less posts than the postlimit,
     show a link to wherever all of them

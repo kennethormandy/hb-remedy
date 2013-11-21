@@ -3,7 +3,7 @@ html(lang="en")
   head
     != partial("../_shared/head")
     != partial("../_shared/font-face")
-  body
+  body(class="#{ (environment==='development' && published===false) ? 'post-unpublished' : '' }")
     //- For each image in public/images/
     for image in public.images._contents
       if image === current.path[1] + (".jpg" || ".png" || ".svg" || ".gif")
@@ -19,8 +19,11 @@ html(lang="en")
               if date
                 time.opening-time(datetime="#{ date }")
                   != date
-    .container(role="main", class="#{ typeof(type)!=='undefined' ? ' post-' + type : '' }")
-      != yield
+    .container(role="main")
+      if environment==='production' && published !== false || environment==='development'
+        != yield
+      else
+        != partial("../404")
       if disqus
         .comments
           .container

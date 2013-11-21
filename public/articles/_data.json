@@ -9,5 +9,10 @@
   "welcome-to-harp": {
     "title": "Welcome to Harp",
     "date": "2013-09-01"
+  },
+  "a-draft-post": {
+    "title": "A Draft Post",
+    "date": "2012-10-25",
+    "published": false
   }
 }
