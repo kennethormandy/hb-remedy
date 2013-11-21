@@ -3,29 +3,33 @@ html(lang="en")
   head
     != partial("../_shared/head")
     != partial("../_shared/font-face")
-  body(class="#{ (environment==='development' && published===false) ? 'post-unpublished' : '' }")
-    .opening
-      for image in public.images._contents
-        if image === current.path[1] + (".jpg" || ".png" || ".svg" || ".gif")
-          img.opening-image(src="/images/#{ image }", alt="")
-      header.opening-header
-        .container
-          a(href="/").opening-return Home
-          if title
-            h1.opening-title(class="#{ title.length > 30 ? 'opening-title--long' : '' }")!= title
-          if date
-            time.opening-time(datetime="#{ date }")
-              != date
-    .container(role="main")
-      if environment==='production' && published !== false || environment==='development'
-        != yield
-      else
-        != partial("../404")
-      if disqus
-        .comments
+  body
+    if published !== false || environment === 'development'
+      .opening(class="#{ environment === 'development' ? 'post-unpublished' : '' }")
+        for image in public.images._contents
+          if image === current.path[1] + (".jpg" || ".png" || ".svg" || ".gif")
+            img.opening-image(src="/images/#{ image }", alt="")
+        header.opening-header
           .container
-            != partial("../_shared/comments")
-      a(href="/").return Return home
-      != partial("../_shared/footer")
+            a(href="/").opening-return Home
+            if title
+              h1.opening-title(class="#{ title.length > 30 ? 'opening-title--long' : '' }")!= title
+            if date
+              time.opening-time(datetime="#{ date }")
+                != date
+      .container(role="main", class="#{ typeof(type)!=='undefined' ? ' post-' + type : '' }")
+        != yield
+        if disqus
+          .comments
+            .container
+              != partial("../_shared/comments")
+        a(href="/").return Return home
+        != partial("../_shared/footer")
+    else
+      //- If the article is unpublished, and we’re
+          in production, mimic the 404 page.
+      .container.container--articles(role="main")
+        != partial("../404")
+        != partial("../_shared/footer")
   if analytics
     != partial("_shared/analytics")
