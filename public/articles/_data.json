@@ -2,12 +2,12 @@
   "index": {
     "layout": "../_layout"
   },
-  "welcome-to-harp": {
-    "title": "Welcome to Harp",
-    "date": "2013-09-01"
-  },
   "go-out-and-make-it-your-own": {
     "title": "Go Out & Make It Your Own",
     "date": "2013-08-19"
+  },
+  "welcome-to-harp": {
+    "title": "Welcome to Harp",
+    "date": "2013-09-01"
   }
 }

@@ -1,28 +1,39 @@
-i = 0
+//- To keep the _data.json the same,
+    make the slug a property of the
+    object in a new array instead.
+    I’d still like to condense
+    this as much as possible.
+
+articles = []
+for article, slug in public.articles._data
+  if article.date
+    - article.slug = slug
+    - articles.push(public.articles._data[slug])
+
+//- Now iterate over the articles,
+    performing the desired operations.
+    In this case, sorting by date from newest
+    to olders, and stopping at the previously
+    defined post postlimit.
 
 ul.post-list
   //- for each article in the _data.json file in public/articles
-  for article, slug in public.articles._data
-    if slug !== "index"
-      //- add one to i (the dash indicates JavaScript)
-      - i++
-      //- If there is no postlimit or it's under the postlimit
-      if postlimit===false || i <= postlimit
-        li(class="post-item#{ article.type ? ' post-' + article.type : ''}")
-          a(href="/articles/#{ slug }")
-            if article.date
-              span.post-meta-date.post-date!= article.date
-            h4.post-item-title= article.title
-          ul.post-meta-list
-            if typeof(author)!=='undefined'
-              li.post-meta-item= author || name
-            //- If Disqus comments are turned on in harp.json
-            //- and if they are turned on for this article
-            if disqus && article.disqus !== false
-              li.post-meta-item
-                a.post-comment-link(href="/articles/#{ slug }#disqus_thread") Comments
+  for article in articles.sort(function(a,b){ a = new Date(a.date); b = new Date(b.date); return b<a?-1:b>a?1:0; }).slice(0, postlimit)
+    li(class="post-item#{ article.type ? ' post-' + article.type : ''}")
+      a(href="/articles/#{ article.slug }")
+        time.post-meta-date.post-date(datetime="#{ new Date(article.date }")= article.date
+        h4.post-item-title= article.title
+      ul.post-meta-list
+        li.post-meta-item= author || name
+        //- If Disqus comments are turned on in harp.json
+        //- and if they are turned on for this article
+        if disqus && article.disqus !== false
+          li.post-meta-item
+            a.post-comment-link(href="/articles/#{ article.slug }#disqus_thread") Comments
 
+//- If there are less posts than the postlimit,
+    show a link to wherever all of them
+    are show. In this case, the articles page.
 
-//- subtract one for articles/index.jade
-if postlimit!=0 && postlimit < (public.articles._contents.length - 1)
+if postlimit < articles.length
   a(href="/articles") View all articles

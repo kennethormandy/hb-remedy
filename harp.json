@@ -6,7 +6,6 @@
     "email": "you@example.com",
     "uri": "example.com",
 
-    "postlimit": false,
     "typekit": false,
     "analytics": false,
     "disqus": false
