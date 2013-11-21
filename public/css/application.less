@@ -139,14 +139,19 @@ header, h1, h2, h3, h4, h5 {
   }
 }
 
-/* Draft Posts */
+/* Unpublished Posts */
 
-.post-unpublished {
-  opacity: 0.5;
-}
-
-.post-item-unpublished {
-  opacity: 0.5;
+.post-item-unpublished, .post-unpublished {
+  .post-item-title, .opening-title {
+    &:after {
+      content: "unpublished";
+      font-style: italic;
+      font-weight: normal;
+      font-size: 0.33em;
+      margin-left: 0.5em;
+      vertical-align: super;
+    }
+  }
 }
 
 /* Post Opening */
@@ -171,29 +176,36 @@ header, h1, h2, h3, h4, h5 {
       line-height: @line-height-base;
     }
   }
-  & + .container h1:first-of-type {
-    // Would be better to not generate this
-    // in the first place.
-    display: none;
-    visibility: hidden;
-  }
 }
 
-.opening-header {
-  top: 0;
+.opening-image {
   width: 100%;
-  position: absolute;
-  color: @color-header;
-  text-shadow: 0 0 1rem rgba(0, 0, 0, 0.8);
-  .opening-title {
-    text-shadow: 0 0 2rem rgba(0, 0, 0, 0.4);  
+  margin: 0;
+  padding: 0;
+  opacity: 0.75;
+  position: relative;
+  display: block;
+  @media (min-width: @screen-large) {
+    .translateY(-25%);
   }
+  & + .opening-header {
+    top: 0;
+    width: 100%;
+    position: absolute;
+    color: @color-header;
+    text-shadow: 0 0 1rem rgba(0, 0, 0, 0.8);
+    .opening-title {
+      text-shadow: 0 0 2rem rgba(0, 0, 0, 0.4);  
+      text-transform: uppercase;
+      line-height: 0.9;
+    }
+  }
+
 }
 
 .opening-title {
   margin-top: 0.5em;
-  text-transform: uppercase;
-  line-height: 0.9;
+  line-height: 1;
   font-weight: 800;
   font-size: 2.5rem;
   @media (min-width: @screen-medium) {
@@ -232,18 +244,6 @@ header, h1, h2, h3, h4, h5 {
   display: block;
   margin-top: 1em;
   margin-left: 0.25em;
-}
-
-.opening-image {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  opacity: 0.75;
-  position: relative;
-  display: block;
-  @media (min-width: @screen-large) {
-    .translateY(-25%);
-  }
 }
 
 .opening-return {
