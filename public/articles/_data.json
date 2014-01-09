@@ -9,6 +9,7 @@
   },
   "a-draft-post": {
     "title": "An example, unpublished post",
-    "date": "2012-10-25"
+    "date": "2012-10-25",
+    "published": false
   }
 }

@@ -1,6 +1,6 @@
 articles = []
 for article, slug in public.articles._data
-  if article.date && article.unpublished!==false
+  if article.date && article.published!==false
     - article.slug = slug
     - articles.push(public.articles._data[slug])
 
