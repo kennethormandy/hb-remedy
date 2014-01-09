@@ -1,0 +1,8 @@
+!= partial("../_shared/opening")
+.container(role="main")
+  != yield
+  != partial("../_shared/article-nav")
+if disqus
+  .comments
+    .container
+      != partial("../_shared/comments")

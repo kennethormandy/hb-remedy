@@ -4,11 +4,13 @@ html(lang="en")
     != partial("_shared/head")
     != partial("_shared/font-face")
   body
-    .container.container--articles(role="main")
-      != yield
-
-      != partial("_shared/footer")
-    if disqus
-      != partial("_shared/comment-count")
-    if analytics
-      != partial("_shared/analytics")
+    if current.source == 'index'
+      .container.container--articles(role="main")
+        != yield
+    else
+      != partial(current.path[0] + "/_nest", { yield: yield })
+    != partial("_shared/footer")
+  if disqus
+    != partial("_shared/comment-count")
+  if analytics
+    != partial("_shared/analytics")

@@ -1,0 +1,12 @@
+.opening(class="#{ published === false ? 'post-unpublished' : '' }")
+  for image in public.images._contents
+    if image === current.path[1] + (".jpg" || ".png" || ".svg" || ".gif")
+      img.opening-image(src="/images/#{ image }", alt="")
+  header.opening-header
+    .container
+      a(href="/").opening-return Home
+      if title
+        h1.opening-title(class="#{ title.length > 30 ? 'opening-title--long' : '' }")!= title
+      if date
+        time.opening-time(datetime="#{ date }")
+          != date

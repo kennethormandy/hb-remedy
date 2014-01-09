@@ -2,4 +2,5 @@ header.post-list-header
   h1.post-list-header-title <strong>#{ name }</strong> writes.
   p Hello, I’m an Canadian novelist and short story writer. My first novel, title <cite>Remedy</cite>, was released in 2010. This biography is in <code>index.jade</code> and #{ name } is a variable in the <code>harp.json</code> file.
   p This list of posts below is a partial that’s reused on <a href="/articles">the articles page</a>, but I’m passing in a variable to limit the number of articles shown here to 1.
+
 != partial("_shared/articles", { postlimit: 1 })
