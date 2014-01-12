@@ -4,7 +4,7 @@ html(lang="en")
     != partial("_shared/head")
     != partial("_shared/font-face")
   body
-    if current.source == 'index'
+    if current.source == 'index' || current.path.length == 1
       .container.container--articles(role="main")
         != yield
     else
