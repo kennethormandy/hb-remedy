@@ -25,3 +25,7 @@ Now visit [localhost:9000](http://localhost:9000) in your browser.
 
 The photograph in the screenshot is [Brandon J. Bilinski – Under Construction](http://www.flickr.com/photos/25751498@N06/6434260649/).
 All photographs in this boilerplate are copyright [Brandon J. Bilinski](http://www.flickr.com/photos/25751498@N06), used here with permission.
+
+
+## License
+Licensed under the [MIT license](http://opensource.org/licenses/MIT).
