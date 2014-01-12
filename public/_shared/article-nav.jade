@@ -17,7 +17,7 @@ each article, i in articles.sort(function(a,b){ a = new Date(a.date); b = new Da
       - next = articles[i + 1]
       //- The actual links
       ol.post-nav
-      if prev
-        a.post-prev(href="#{ prev.slug }") #{ prev.title }
-      if next
-        a.post-next(href="#{ next.slug }") #{ next.title }
+        if prev
+          a.post-prev(href="#{ prev.slug }") #{ prev.title }
+        if next
+          a.post-next(href="#{ next.slug }") #{ next.title }
