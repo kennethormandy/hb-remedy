@@ -1,8 +1,6 @@
 //- To keep the _data.json the same,
     make the slug a property of the
     object in a new array instead.
-    I’d still like to condense
-    this as much as possible.
 
 articles = []
 for article, slug in public.articles._data
@@ -10,8 +8,9 @@ for article, slug in public.articles._data
     - article.slug = slug
     - articles.push(public.articles._data[slug])
 
-//- Now iterate over the articles,
-    performing the desired operations.
+//- Iterate over the articles,
+    using the articles array from _shared/articles.jade
+
     In this case, sorting by date from newest
     to olders, and stopping at the previously
     defined post postlimit.  

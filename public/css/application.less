@@ -154,6 +154,33 @@ header, h1, h2, h3, h4, h5 {
   }
 }
 
+/* Post Previous and Next links */
+
+.post-nav {
+  list-style-type: none;
+  display: block;
+  width: 100%;
+}
+
+.post-prev {
+  display: inline-block;
+  float: left;
+  &:before {
+    content: "\2190";
+    padding-right: 0.5em;
+  } 
+}
+
+.post-next {
+  display: inline-block;
+  float: right;
+
+  &:after {
+    content: "\2192";
+    padding-left: 0.5em;
+  }
+}
+
 /* Post Opening */
 
 .opening {
@@ -375,6 +402,8 @@ code {
 }
 
 .footer {
+  &:extend(.container);
+  &:extend(.container--articles);
   font-size: 0.8em;
   margin-bottom: 0;
   margin-top: 4em;
