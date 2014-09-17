@@ -3,6 +3,10 @@
 @import "_mixins.less";
 @import "_normalize.less";
 
+* {
+  .box-sizing(border-box);
+}
+
 html {
   font-family: @font-family-base;
   background: @color-background;
@@ -34,6 +38,20 @@ header, h1, h2, h3, h4, h5 {
   font-family: @font-family-base;
   line-height: 1.05;
   margin: 0;
+}
+
+ul, ol, li {
+  margin: 0;
+  padding: 0;
+  list-style-position: outside;
+}
+
+::-moz-selection {
+  background: lighten(@color-link, 33%);
+}
+
+::selection {
+  background: lighten(@color-link, 33%);
 }
 
 /* Web Fonts */
