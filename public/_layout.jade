@@ -4,11 +4,13 @@ html(lang="en")
     != partial("_shared/head")
     != partial("_shared/font-face")
   body
-    if current.source == 'index' || current.path.length == 1
+    //- If it’s an index or in the root, show it.
+    if current.source === 'index' || current.path.length < 2
       .container.container--articles(role="main")
         != yield
     else
-      != partial(current.path[0] + "/_nest", { yield: yield })
+      //- Otherwise, use Harp’s partial() function to wrap it in that directory’s _nest.jade
+      != partial((current.path[current.path.length - 2] || '') + "/_nest")
     != partial("_shared/footer")
   if disqus
     != partial("_shared/comment-count")
