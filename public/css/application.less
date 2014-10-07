@@ -1,10 +1,8 @@
-// @import "fonts/font-face" at bottom
 @import "_variables.less";
-@import "_mixins.less";
 @import "_normalize.less";
 
 * {
-  .box-sizing(border-box);
+  box-sizing: border-box;
 }
 
 html {
@@ -13,7 +11,7 @@ html {
   color: @color-text;
   line-height: @line-height-base;
   font-variant: normal;
-  .font-feature-settings("onum" 1, "pnum" 1, "kern" false, "liga" 1);
+  font-feature-settings: "onum" 1, "pnum" 1, "kern" false, "liga" 1;
   margin: 0;
   padding: 0;
 }
@@ -25,7 +23,7 @@ body {
 a, a:visited {
   text-decoration: none;
   color: @color-link;
-  .transition(color 0.1s ease-in-out);
+  transition: color 0.1s ease-in-out;
   &:hover, &:focus {
     color: @color-link-hover;
   }
@@ -70,7 +68,7 @@ ul, ol, li {
 .sc {
   font-family: "source-sans-pro-sc", @font-family-base;
   text-transform: lowercase;
-  .font-feature-settings("smcp" 1, "c2sc" 1, "cpsp" 1);
+  font-feature-settings: "smcp" 1, "c2sc" 1, "cpsp" 1;
 }
 
 /* Container
@@ -125,7 +123,6 @@ ul, ol, li {
 
 .post-item {
   margin-bottom: 3em;
-  .clearfix();
 }
 
 .post-item-title {
@@ -153,14 +150,16 @@ ul, ol, li {
     padding-right: 1em;
     margin-top: 0.15em;
     float: left;
-    text-align: right;    
+    text-align: right;
   }
 }
 
 /* Unpublished Posts */
 
-.post-item-unpublished, .post-unpublished {
-  .post-item-title, .opening-title {
+.post-item-unpublished,
+.post-unpublished {
+  .post-item-title,
+  .opening-title {
     &:after {
       content: "unpublished";
       font-style: italic;
@@ -186,7 +185,7 @@ ul, ol, li {
   &:before {
     content: "\2190";
     padding-right: 0.5em;
-  } 
+  }
 }
 
 .post-next {
@@ -231,7 +230,7 @@ ul, ol, li {
   position: relative;
   display: block;
   @media (min-width: @screen-large) {
-    .translateY(-25%);
+    transform: translateY(-25%);
   }
   & + .opening-header {
     top: 0;
@@ -240,7 +239,7 @@ ul, ol, li {
     color: @color-header;
     text-shadow: 0 0 1rem rgba(0, 0, 0, 0.8);
     .opening-title {
-      text-shadow: 0 0 2rem rgba(0, 0, 0, 0.4);  
+      text-shadow: 0 0 2rem rgba(0, 0, 0, 0.4);
       text-transform: uppercase;
       line-height: 0.9;
     }
